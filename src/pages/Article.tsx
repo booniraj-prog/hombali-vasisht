@@ -16,18 +16,18 @@ export function Article() {
     <>
       <Seo title={`${article.title} — Hombali Vasisht`} description={article.excerpt} />
       <article>
-        <header className="relative min-h-[62svh] overflow-hidden bg-white pt-28 md:pt-36">
-          <HeroField kind="section" />
-          <Container className="relative max-w-3xl">
-          <p className="text-[0.68rem] uppercase tracking-[0.24em] text-stone">
-            <Link to="/journal" className="hover:text-ink">
-              Journal
-            </Link>
-            <span className="mx-3">/</span>
-            {article.category}
-          </p>
-          <h1 className="mt-6 text-[clamp(2.8rem,6vw,5rem)] text-balance">{article.title}</h1>
-          <p className="mt-6 text-sm uppercase tracking-[0.2em] text-stone">{article.date}</p>
+        <header className="relative flex min-h-[72svh] flex-col justify-end overflow-hidden bg-deep text-paper">
+          <HeroField kind="section" image={article.image.src} />
+          <Container className="relative max-w-3xl pt-36 pb-16">
+            <p className="text-[0.68rem] uppercase tracking-[0.24em] text-paper/75">
+              <Link to="/journal" className="hover:text-sun">
+                Journal
+              </Link>
+              <span className="mx-3">/</span>
+              {article.category}
+            </p>
+            <h1 className="mt-6 text-[clamp(2.8rem,6vw,5rem)] text-balance text-paper">{article.title}</h1>
+            <p className="mt-6 text-sm uppercase tracking-[0.2em] text-paper/70">{article.date}</p>
           </Container>
         </header>
         <Container className="mt-10 max-w-5xl">

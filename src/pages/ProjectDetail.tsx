@@ -19,19 +19,19 @@ export function ProjectDetail() {
         title={`${project.title} — Hombali Vasisht`}
         description={`${project.title}, ${project.location}, ${project.year}. ${project.summary}`}
       />
-      <header className="relative min-h-[70svh] overflow-hidden bg-white pt-28 md:pt-32">
-        <HeroField kind={project.drawing} />
-        <Container className="relative">
-          <p className="text-[0.68rem] uppercase tracking-[0.24em] text-stone">
-            <Link to="/projects" className="transition-colors hover:text-ink">
+      <header className="relative flex min-h-[78svh] flex-col justify-end overflow-hidden bg-deep text-paper">
+        <HeroField kind={project.drawing} image={project.hero.src} />
+        <Container className="relative pt-32 pb-16">
+          <p className="text-[0.68rem] uppercase tracking-[0.24em] text-paper/75">
+            <Link to="/projects" className="transition-colors hover:text-sun">
               Projects
             </Link>
             <span className="mx-3">/</span>
             {project.category}
           </p>
           <div className="mt-6 grid items-end gap-8 lg:grid-cols-12">
-            <h1 className="text-[clamp(3.2rem,7vw,6.6rem)] lg:col-span-8">{project.title}</h1>
-            <p className="text-sm leading-relaxed text-stone lg:col-span-4">
+            <h1 className="text-[clamp(3.2rem,7vw,6.6rem)] text-paper lg:col-span-8">{project.title}</h1>
+            <p className="text-sm leading-relaxed text-paper/80 lg:col-span-4">
               {project.location}
               <br />
               {project.year}
@@ -40,7 +40,9 @@ export function ProjectDetail() {
             </p>
           </div>
         </Container>
-        <div className="mt-10">
+      </header>
+      <div className="bg-ivory py-10">
+        <Container>
           <ImageFrame
             src={project.hero.src}
             alt={project.hero.alt}
@@ -48,8 +50,8 @@ export function ProjectDetail() {
             priority
             hover={false}
           />
-        </div>
-      </header>
+        </Container>
+      </div>
 
       <section className="py-16 md:py-24">
         <Container className="grid gap-12 lg:grid-cols-12">

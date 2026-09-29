@@ -1,4 +1,4 @@
-import { principles, studio } from "../data/site.ts"
+import { pageHeroes, principles, studio } from "../data/site.ts"
 import { LineArt } from "../components/LineArt.tsx"
 import { Seo } from "../components/Seo.tsx"
 import { Container, PageIntro } from "../components/Section.tsx"
@@ -16,6 +16,7 @@ export function Philosophy() {
         title="How the work is judged"
         sheet="04 / Philosophy"
         drawing="section"
+        image={pageHeroes.philosophy}
         lede={studio.philosophy}
       />
 

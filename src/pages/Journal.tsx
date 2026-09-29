@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
 import { articles } from "../data/journal.ts"
+import { pageHeroes } from "../data/site.ts"
 import { Seo } from "../components/Seo.tsx"
 import { Container, PageIntro } from "../components/Section.tsx"
 
@@ -16,6 +17,7 @@ export function Journal() {
         title="Notes from the studio"
         sheet="06 / Journal"
         drawing="courtyard"
+        image={pageHeroes.journal}
         lede="Short writings on courtyards, materials, schools, and the habit of drawing. A record of how the practice thinks between projects."
       />
       <section className="py-8 md:py-12">

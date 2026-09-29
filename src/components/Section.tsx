@@ -40,7 +40,7 @@ export function SectionLabel({
 
 export function SheetMark({ sheet, title }: { sheet: string; title: string }) {
   return (
-    <div className="grid w-max grid-cols-[auto_auto] gap-x-6 gap-y-1 border border-line px-4 py-3 text-[10px] uppercase tracking-[0.22em] text-stone">
+    <div className="grid w-max grid-cols-[auto_auto] gap-x-6 gap-y-1 border border-line bg-white/95 px-4 py-3 text-[10px] uppercase tracking-[0.22em] text-stone">
       <span>Practice</span>
       <span className="text-ink">Hombali Vasisht</span>
       <span>Sheet</span>
@@ -60,6 +60,7 @@ export function PageIntro({
   lede,
   sheet,
   drawing,
+  image,
 }: {
   index: string
   kicker: string
@@ -67,19 +68,20 @@ export function PageIntro({
   lede: string
   sheet: string
   drawing: DrawingKind
+  image: string
 }) {
   return (
-    <header className="relative min-h-[78svh] overflow-hidden border-b border-line bg-white pt-28 pb-14 md:pt-36 md:pb-20">
-      <HeroField kind={drawing} />
-      <Container className="relative grid gap-10 lg:grid-cols-12 lg:items-end">
-        <p className="text-[0.68rem] font-medium uppercase tracking-[0.28em] text-stone lg:col-span-3">
-          <span className="text-bronze">{index}</span>
+    <header className="relative flex min-h-[88svh] flex-col justify-end overflow-hidden bg-deep text-paper">
+      <HeroField kind={drawing} image={image} />
+      <Container className="relative grid gap-10 pt-36 pb-14 lg:grid-cols-12 lg:items-end md:pb-20">
+        <p className="text-[0.68rem] font-medium uppercase tracking-[0.28em] text-paper/75 lg:col-span-3">
+          <span className="text-sun">{index}</span>
           <span className="mx-3 opacity-50">/</span>
           {kicker}
         </p>
         <div className="lg:col-span-8">
-          <h1 className="max-w-4xl text-[clamp(3.1rem,7vw,6.4rem)] text-balance">{title}</h1>
-          <p className="mt-8 max-w-2xl text-lg font-light leading-relaxed text-stone">{lede}</p>
+          <h1 className="max-w-4xl text-[clamp(3.1rem,7vw,6.4rem)] text-balance text-paper">{title}</h1>
+          <p className="mt-8 max-w-2xl text-lg font-light leading-relaxed text-paper/85">{lede}</p>
         </div>
         <div className="hidden lg:col-span-12 lg:block">
           <SheetMark sheet={sheet} title={kicker} />

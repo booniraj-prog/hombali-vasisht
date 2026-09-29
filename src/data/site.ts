@@ -14,8 +14,8 @@ export const studio = {
   philosophy:
     "Architecture is a patient conversation with climate, material, and the life a building has to hold.",
   hero: {
-    src: photo("photo-1713026511073-853c2c3d2f7e", 2200),
-    alt: "A brick house in India, set among planting, with a shaded portico.",
+    src: photo("photo-1773155920824-54413d1a3876", 2400),
+    alt: "A sunlit Indian courtyard of carved stone, arched verandahs, and deep balconies.",
   },
   portrait: {
     src: photo("photo-1751214608311-c1e01351426c", 1400),
@@ -39,6 +39,16 @@ export const studio = {
     embed:
       "https://maps.google.com/maps?q=57%2F1%2C+East+Park+Road%2C+15th+Cross%2C+Sampige+Road%2C+Malleswaram%2C+Bengaluru+560055&z=16&output=embed",
   },
+}
+
+export const pageHeroes = {
+  about: photo("photo-1751214608311-c1e01351426c", 2400),
+  projects: photo("photo-1757310062384-d3bcfe3026e8", 2400),
+  philosophy: photo("photo-1506461883276-594a12b11cf3", 2400),
+  services: photo("photo-1667099639128-4b10f464f4a2", 2400),
+  journal: photo("photo-1682414181779-591e1c620b4e", 2400),
+  contact: photo("photo-1744448365250-9b6aa1a7e4a3", 2400),
+  missing: photo("photo-1662264200468-450825d2372c", 2400),
 }
 
 export const navigation = [

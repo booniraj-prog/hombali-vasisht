@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react"
 import { AnimatePresence, motion } from "framer-motion"
 import { categories, type Category } from "../data/types.ts"
+import { pageHeroes } from "../data/site.ts"
 import { projects } from "../data/projects.ts"
 import { ProjectCard } from "../components/ProjectCard.tsx"
 import { Seo } from "../components/Seo.tsx"
@@ -27,6 +28,7 @@ export function Projects() {
         title="Selected work"
         sheet="03 / Projects"
         drawing="plan"
+        image={pageHeroes.projects}
         lede="A portion of the practice, across houses, institutions, hotels, interiors, and a few public edges. Each project opens onto its own sheet."
       />
 

@@ -1,4 +1,4 @@
-import { affiliations, awards, education, stats, studio, timeline } from "../data/site.ts"
+import { affiliations, awards, education, pageHeroes, stats, studio, timeline } from "../data/site.ts"
 import { ImageFrame } from "../components/ImageFrame.tsx"
 import { LineArt } from "../components/LineArt.tsx"
 import { Seo } from "../components/Seo.tsx"
@@ -18,6 +18,7 @@ export function About() {
         title="The architect"
         sheet="02 / About"
         drawing="elevation"
+        image={pageHeroes.about}
         lede="A principal-led practice in Bengaluru. The work is drawn slowly, built with local materials, and judged by how a room feels in the middle of the afternoon."
       />
 

@@ -1,4 +1,4 @@
-import { process, services } from "../data/site.ts"
+import { pageHeroes, process, services } from "../data/site.ts"
 import { LineArt } from "../components/LineArt.tsx"
 import { Seo } from "../components/Seo.tsx"
 import { Container, PageIntro } from "../components/Section.tsx"
@@ -17,6 +17,7 @@ export function Services() {
         title="The work of the office"
         sheet="05 / Services"
         drawing="grid"
+        image={pageHeroes.services}
         lede="Eight services, one practice. Most commissions begin as a conversation and stay with the principal from the first drawing to the last site visit."
       />
 

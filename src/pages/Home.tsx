@@ -56,20 +56,17 @@ function Hero() {
         className="absolute inset-x-0 top-0 h-[118%] w-full object-cover"
         style={reduce ? undefined : { y }}
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-deep via-deep/70 to-deep/15" />
+      <div className="absolute inset-0 bg-gradient-to-r from-deep/78 via-deep/28 to-transparent" />
       <div
-        className="pointer-events-none absolute inset-0"
+        className="pointer-events-none absolute inset-0 opacity-60"
         style={{
           backgroundImage:
-            "linear-gradient(to right, rgba(245,197,24,0.55) 1px, transparent 1px), linear-gradient(to bottom, rgba(245,197,24,0.55) 1px, transparent 1px)",
+            "linear-gradient(to right, rgba(245,197,24,0.22) 1px, transparent 1px), linear-gradient(to bottom, rgba(245,197,24,0.22) 1px, transparent 1px)",
           backgroundSize: "88px 88px",
         }}
       />
-      <div className="pointer-events-none absolute top-24 right-4 w-[58%] max-w-[240px] text-sun/90 sm:right-10 sm:max-w-[340px] lg:top-28 lg:w-[38%] lg:max-w-[480px]">
+      <div className="pointer-events-none absolute top-28 right-6 hidden w-[34%] text-paper/50 lg:block">
         <LineArt kind="courtyard" mode="static" />
-      </div>
-      <div className="pointer-events-none absolute right-[-6%] bottom-10 hidden w-[46%] text-paper/55 md:block">
-        <LineArt kind="elevation" mode="static" />
       </div>
 
       <Container className="relative flex min-h-[100svh] flex-col justify-end pt-32 pb-12 md:pb-16">
