@@ -10,9 +10,9 @@ export function Footer() {
       <div className="mx-auto grid w-full max-w-[1400px] gap-12 px-5 py-16 sm:px-8 lg:grid-cols-12 lg:px-14 lg:py-20">
         <div className="lg:col-span-4">
           <img
-            src={`${import.meta.env.BASE_URL}header-logo.jpg`}
-            alt="Hombali Vasisht, Buildings and Blueprints"
-            className="h-auto w-full max-w-[280px] object-contain"
+            src={`${import.meta.env.BASE_URL}footer-logo.jpg`}
+            alt="Hombali Vasisht Buildings and Blueprints. Where visions become visuals."
+            className="h-auto w-full max-w-[320px] object-contain"
           />
           <p className="mt-6 max-w-xs leading-relaxed text-stone">{studio.philosophy}</p>
         </div>
