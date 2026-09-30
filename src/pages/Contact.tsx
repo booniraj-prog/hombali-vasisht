@@ -10,25 +10,31 @@ export function Contact() {
   return (
     <>
       <Seo
-        title="Contact — Hombali Vasisht"
-        description="Write to the Bengaluru studio of Hombali Vasisht. Malleswaram office, email, phone, a project enquiry form, and a map."
+        title="Contact — Hombali Vasisht, Bengaluru"
+        description="Contact Hombali Vasisht at 57/1 East Park Road, Malleswaram, Bengaluru 560055. Email, phone, a project enquiry, and a map."
+        path="/contact"
+        image={pageHeroes.contact}
+        crumbs={[
+          { name: "Home", path: "/" },
+          { name: "Contact", path: "/contact" },
+        ]}
       />
       <section className="relative min-h-[88svh] overflow-hidden bg-deep pt-40 pb-16 text-paper md:pt-44 md:pb-24">
         <HeroField kind="plan" image={pageHeroes.contact} />
         <Container className="relative grid gap-16 lg:grid-cols-12">
           <div className="lg:col-span-5">
-            <p className="text-[0.68rem] uppercase tracking-[0.28em] text-paper/75">
+            <p className="text-xs font-medium uppercase tracking-[0.14em] text-paper/75">
               <span className="text-sun">07</span>
               <span className="mx-3 opacity-50">/</span>
               Enquiry
             </p>
-            <h1 className="mt-5 text-[clamp(3.2rem,6vw,5.6rem)] text-balance text-paper">Let's create something meaningful.</h1>
-            <p className="mt-6 max-w-md font-light leading-relaxed text-paper/80">
+            <h1 className="mt-5 text-balance text-paper">Let's create something meaningful.</h1>
+            <p className="mt-6 max-w-md leading-relaxed text-paper/80">
               Commissions are taken personally. Share a site, a house, or a question. The studio replies from
               Bengaluru.
             </p>
 
-            <address className="mt-12 text-sm leading-relaxed not-italic">
+            <address className="mt-12 leading-relaxed not-italic">
               {studio.address.map((line) => (
                 <span key={line} className="block">
                   {line}

@@ -3,7 +3,7 @@ import { AnimatePresence, motion, useReducedMotion } from "framer-motion"
 import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom"
 import { Footer } from "./components/Footer.tsx"
 import { Header } from "./components/Header.tsx"
-import { studio } from "./data/site.ts"
+import { leaders, services, siteUrl, studio } from "./data/site.ts"
 import { About } from "./pages/About.tsx"
 import { Build } from "./pages/Build.tsx"
 import { Article } from "./pages/Article.tsx"
@@ -86,20 +86,55 @@ function PracticeSchema() {
     script.text = JSON.stringify({
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
+      "@id": `${siteUrl}/#practice`,
       name: studio.name,
       description: studio.philosophy,
-      url: window.location.origin,
+      url: `${siteUrl}/`,
+      image: studio.hero.src,
+      logo: `${siteUrl}/header-logo.jpg`,
       email: studio.email,
-      telephone: studio.phone,
+      telephone: "+918041236700",
+      foundingDate: studio.established,
       address: {
         "@type": "PostalAddress",
-        streetAddress: "57/1, First Floor, East Park Road, 15th Cross, Sampige Road, Malleswaram",
-        addressLocality: "Bengaluru",
+        streetAddress: "57/1, First Floor, East Park Road, 15th Cross, Sampige Road",
+        addressLocality: "Malleswaram, Bengaluru",
         postalCode: "560055",
         addressRegion: "Karnataka",
         addressCountry: "IN",
       },
-      areaServed: "Bengaluru",
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: studio.map.lat,
+        longitude: studio.map.lng,
+      },
+      hasMap: studio.map.href,
+      areaServed: ["Bengaluru", "Karnataka"],
+      knowsAbout: ["Architecture", "Urban planning", "Interior architecture", "Residential design"],
+      employee: leaders.map((leader) => ({
+        "@type": "Person",
+        name: leader.name,
+        jobTitle: leader.role,
+        telephone: leader.phoneHref.replace("tel:", ""),
+        worksFor: { "@id": `${siteUrl}/#practice` },
+        ...("credentials" in leader && leader.credentials ? { honorificSuffix: leader.credentials } : {}),
+        ...("bio" in leader && leader.bio ? { description: leader.bio } : {}),
+        ...(leader.portrait.includes("unsplash.com")
+          ? {}
+          : { image: `${siteUrl}/${leader.portrait.split("/").pop()}` }),
+      })),
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Architectural services",
+        itemListElement: services.map((service) => ({
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: service.title,
+            description: service.description,
+          },
+        })),
+      },
     })
     document.head.appendChild(script)
     return () => script.remove()

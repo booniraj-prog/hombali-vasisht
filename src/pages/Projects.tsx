@@ -31,8 +31,18 @@ export function Projects() {
   return (
     <>
       <Seo
-        title="Projects — Hombali Vasisht"
-        description="Selected residential, commercial, hospitality, institutional, interior, and landscape works by Hombali Vasisht, Bengaluru."
+        title={filter === "All" ? "Projects — Hombali Vasisht" : `${filter} projects — Hombali Vasisht`}
+        description={
+          filter === "All"
+            ? "Selected residential, commercial, hospitality, institutional, interior, and landscape works by Hombali Vasisht, Bengaluru."
+            : `${filter} architecture by Hombali Vasisht, a Bengaluru practice. Selected projects with location, year, and drawings.`
+        }
+        path={filter === "All" ? "/projects" : `/projects?category=${encodeURIComponent(filter)}`}
+        image={pageHeroes.projects}
+        crumbs={[
+          { name: "Home", path: "/" },
+          { name: "Projects", path: "/projects" },
+        ]}
       />
       <PageIntro
         index="03"
@@ -55,7 +65,7 @@ export function Projects() {
                   type="button"
                   aria-pressed={active}
                   onClick={() => choose(category)}
-                  className={`shrink-0 border-b pb-1 text-[0.72rem] uppercase tracking-[0.2em] transition-colors ${
+                  className={`shrink-0 border-b pb-1 text-xs font-medium uppercase tracking-[0.1em] transition-colors ${
                     active ? "border-ink text-ink" : "border-transparent text-stone hover:text-ink"
                   }`}
                 >

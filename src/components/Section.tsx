@@ -27,7 +27,7 @@ export function SectionLabel({
 }) {
   return (
     <p
-      className={`text-[0.68rem] font-medium uppercase tracking-[0.28em] ${
+      className={`text-xs font-medium uppercase tracking-[0.14em] ${
         tone === "light" ? "text-paper/70" : "text-stone"
       }`}
     >
@@ -40,7 +40,7 @@ export function SectionLabel({
 
 export function SheetMark({ sheet, title }: { sheet: string; title: string }) {
   return (
-    <div className="grid w-max grid-cols-[auto_auto] gap-x-6 gap-y-1 border border-line bg-white/95 px-4 py-3 text-[10px] uppercase tracking-[0.22em] text-stone">
+    <div className="grid w-max grid-cols-[auto_auto] gap-x-6 gap-y-1 border border-line bg-white/95 px-4 py-3 text-xs font-medium uppercase tracking-[0.12em] text-stone">
       <span>Practice</span>
       <span className="text-ink">Hombali Vasisht</span>
       <span>Sheet</span>
@@ -74,14 +74,14 @@ export function PageIntro({
     <header className="relative flex min-h-[88svh] flex-col justify-end overflow-hidden bg-deep text-paper">
       <HeroField kind={drawing} image={image} />
       <Container className="relative grid gap-10 pt-40 pb-14 lg:grid-cols-12 lg:items-end md:pt-44 md:pb-20">
-        <p className="text-[0.68rem] font-medium uppercase tracking-[0.28em] text-paper/75 lg:col-span-3">
+        <p className="text-xs font-medium uppercase tracking-[0.14em] text-paper/75 lg:col-span-3">
           <span className="text-sun">{index}</span>
           <span className="mx-3 opacity-50">/</span>
           {kicker}
         </p>
         <div className="lg:col-span-8">
-          <h1 className="max-w-4xl text-[clamp(3.1rem,7vw,6.4rem)] text-balance text-paper">{title}</h1>
-          <p className="mt-8 max-w-2xl text-lg font-light leading-relaxed text-paper/85">{lede}</p>
+          <h1 className="max-w-4xl text-balance text-paper">{title}</h1>
+          <p className="mt-8 max-w-2xl text-lg leading-relaxed text-paper/85">{lede}</p>
         </div>
         <div className="hidden lg:col-span-12 lg:block">
           <SheetMark sheet={sheet} title={kicker} />

@@ -4,13 +4,13 @@ export function StudioMap() {
   return (
     <div className="grid gap-10 lg:grid-cols-12 lg:items-end">
       <div className="lg:col-span-4">
-        <p className="text-[0.68rem] uppercase tracking-[0.24em] text-stone">
+        <p className="text-xs font-medium uppercase tracking-[0.12em] text-stone">
           <span className="text-bronze">09</span>
           <span className="mx-3 opacity-50">/</span>
           Location
         </p>
-        <h2 className="mt-5 text-[clamp(2.6rem,4.5vw,4.4rem)] text-balance">The studio in Malleswaram.</h2>
-        <address className="mt-8 text-sm leading-relaxed not-italic">
+        <h2 className="mt-5 text-balance">The studio in Malleswaram.</h2>
+        <address className="mt-8 leading-relaxed not-italic">
           {studio.address.map((line) => (
             <span key={line} className="block">
               {line}

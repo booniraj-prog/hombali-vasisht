@@ -5,6 +5,14 @@ import { photo } from "../lib/media.ts"
  * Practice identity, biography, services, and philosophy.
  * Replace this file when the real biography, awards, and contact details are ready.
  */
+/** Public address of the published site. Canonical links and the sitemap use this. */
+export const siteUrl = "https://booniraj-prog.github.io/hombali-vasisht"
+
+export function pageUrl(path = "/") {
+  if (!path || path === "/") return `${siteUrl}/`
+  return `${siteUrl}${path.startsWith("/") ? path : `/${path}`}`
+}
+
 export const studio = {
   name: "Hombali Vasisht",
   role: "Architect",
@@ -104,6 +112,9 @@ export const leaders = [
   {
     name: "Arunachal Hombali",
     role: "Partner",
+    portrait: `${import.meta.env.BASE_URL}arunachal.jpg`,
+    credentials: "B.Arch., M.Planning, Ph.D.",
+    bio: "Brings 26+ years of professional experience and 24 years of teaching experience in architecture and urban planning. He provides architectural leadership, combining innovative design, practical planning, sustainability, and regulatory expertise to deliver well-planned spaces.",
     phone: "+91 91086 37443",
     phoneHref: "tel:+919108637443",
     socials: [
@@ -115,6 +126,7 @@ export const leaders = [
   {
     name: "Sarojini Hombali",
     role: "Partner",
+    portrait: photo("photo-1757310062384-d3bcfe3026e8", 1400),
     phone: "+91 97424 23507",
     phoneHref: "tel:+919742423507",
     socials: [
@@ -124,8 +136,11 @@ export const leaders = [
     ],
   },
   {
-    name: "Shravanth Vasisth",
+    name: "Shravanth Vasisht",
     role: "Partner",
+    portrait: `${import.meta.env.BASE_URL}shravanth.jpg`,
+    credentials: "M.Tech, MBA (PhD Scholar – IISc)",
+    bio: "16 years of experience as an Energy, Environment, and Mobility Consultant, with expertise in sustainable and innovative infrastructure solutions. He supports energy-efficient, environmentally responsible, and future-ready approaches to construction and infrastructure development.",
     phone: "+91 97394 70014",
     phoneHref: "tel:+919739470014",
     socials: [

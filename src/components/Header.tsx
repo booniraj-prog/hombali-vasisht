@@ -39,7 +39,7 @@ export function Header() {
   }, [open, menu])
 
   const linkClass = (active: boolean) =>
-    `inline-flex h-10 items-center text-[0.72rem] leading-none uppercase tracking-[0.16em] transition-colors duration-300 ${
+    `inline-flex h-10 items-center text-sm font-semibold leading-none uppercase tracking-[0.06em] transition-colors duration-300 ${
       active ? "text-ink" : "text-stone hover:text-ink"
     }`
 
@@ -50,7 +50,7 @@ export function Header() {
           <div className="flex min-w-0 items-center gap-4 sm:gap-6">
             <a
               href={studio.phoneHref}
-              className="inline-flex shrink-0 items-center gap-2 text-[0.72rem] leading-none tracking-wide transition-colors hover:text-sun"
+              className="inline-flex shrink-0 items-center gap-2 text-xs font-medium leading-none tracking-wide transition-colors hover:text-sun"
             >
               <PhoneIcon />
               <span>{studio.phone}</span>
@@ -58,7 +58,7 @@ export function Header() {
             <a
               href={`mailto:${studio.email}`}
               aria-label={studio.email}
-              className="inline-flex min-w-0 items-center gap-2 text-[0.72rem] leading-none tracking-wide transition-colors hover:text-sun"
+              className="inline-flex min-w-0 items-center gap-2 text-xs font-medium leading-none tracking-wide transition-colors hover:text-sun"
             >
               <MailIcon />
               <span className="hidden truncate sm:inline">{studio.email}</span>
@@ -87,9 +87,9 @@ export function Header() {
         <div className="mx-auto flex h-[5.25rem] w-full max-w-[1400px] items-center justify-between px-5 sm:px-8 lg:px-14">
           <Link to="/" className="flex items-center" aria-label="Hombali Vasisht, home" onClick={() => setOpen(false)}>
             <img
-              src={`${import.meta.env.BASE_URL}logo.jpg`}
-              alt="Hombali Vasisht Buildings and Blueprints"
-              className="h-14 w-auto max-w-[52vw] object-contain object-left sm:h-16 sm:max-w-[280px]"
+              src={`${import.meta.env.BASE_URL}header-logo.jpg`}
+              alt="Hombali Vasisht, Buildings and Blueprints"
+              className="h-12 w-auto max-w-[70vw] object-contain object-left sm:h-14"
             />
           </Link>
 
@@ -131,7 +131,7 @@ export function Header() {
                               end
                               role="menuitem"
                               className={({ isActive }) =>
-                                `block px-5 py-2.5 text-[0.68rem] leading-none uppercase tracking-[0.16em] transition-colors ${
+                                `block px-5 py-2.5 text-sm font-semibold leading-none uppercase tracking-[0.06em] transition-colors ${
                                   isActive ? "text-ink" : "text-stone hover:text-ink"
                                 }`
                               }
@@ -193,7 +193,7 @@ export function Header() {
                   to={item.to}
                   end={item.end}
                   onClick={() => setOpen(false)}
-                  className={({ isActive }) => `block text-4xl ${isActive ? "text-bronze" : "text-ink"}`}
+                  className={({ isActive }) => `block text-2xl font-medium ${isActive ? "text-bronze" : "text-ink"}`}
                 >
                   {item.label}
                 </NavLink>

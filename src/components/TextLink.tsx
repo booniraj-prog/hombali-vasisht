@@ -9,7 +9,7 @@ type Props = {
 }
 
 export function TextLink({ children, tone = "dark", to, href }: Props) {
-  const className = `group inline-flex items-center gap-3 text-[0.72rem] font-medium uppercase tracking-[0.24em] ${
+  const className = `group inline-flex items-center gap-3 text-xs font-medium uppercase tracking-[0.12em] ${
     tone === "light" ? "text-paper" : "text-ink"
   }`
   const content = (

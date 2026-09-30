@@ -10,15 +10,15 @@ export function Footer() {
       <div className="mx-auto grid w-full max-w-[1400px] gap-12 px-5 py-16 sm:px-8 lg:grid-cols-12 lg:px-14 lg:py-20">
         <div className="lg:col-span-4">
           <img
-            src={`${import.meta.env.BASE_URL}logo.jpg`}
-            alt="Hombali Vasisht Buildings and Blueprints"
-            className="h-auto w-full max-w-[280px] bg-white object-contain"
+            src={`${import.meta.env.BASE_URL}header-logo.jpg`}
+            alt="Hombali Vasisht, Buildings and Blueprints"
+            className="h-auto w-full max-w-[280px] object-contain"
           />
-          <p className="mt-6 max-w-xs text-sm font-light leading-relaxed text-stone">{studio.philosophy}</p>
+          <p className="mt-6 max-w-xs leading-relaxed text-stone">{studio.philosophy}</p>
         </div>
 
         <nav className="lg:col-span-3" aria-label="Footer">
-          <p className="text-[0.68rem] uppercase tracking-[0.24em] text-stone">Index</p>
+          <p className="text-xs font-medium uppercase tracking-[0.12em] text-stone">Index</p>
           <ul className="mt-4 space-y-2">
             {navigation.map((item) => (
               <li key={item.to}>
@@ -42,8 +42,8 @@ export function Footer() {
         </nav>
 
         <div className="lg:col-span-3">
-          <p className="text-[0.68rem] uppercase tracking-[0.24em] text-stone">Studio</p>
-          <address className="mt-4 text-sm leading-relaxed not-italic text-ink">
+          <p className="text-xs font-medium uppercase tracking-[0.12em] text-stone">Studio</p>
+          <address className="mt-4 leading-relaxed not-italic text-ink">
             {studio.address.map((line) => (
               <span key={line} className="block">
                 {line}
@@ -59,7 +59,7 @@ export function Footer() {
         </div>
 
         <div className="lg:col-span-2">
-          <p className="text-[0.68rem] uppercase tracking-[0.24em] text-stone">Follow</p>
+          <p className="text-xs font-medium uppercase tracking-[0.12em] text-stone">Follow</p>
           <ul className="-ml-2 mt-4 flex items-center">
             {social.map((item) => (
               <li key={item.id}>
@@ -79,7 +79,7 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-line">
-        <div className="mx-auto flex w-full max-w-[1400px] flex-col gap-2 px-5 py-5 text-[0.68rem] uppercase tracking-[0.2em] text-stone sm:flex-row sm:justify-between sm:px-8 lg:px-14">
+        <div className="mx-auto flex w-full max-w-[1400px] flex-col gap-2 px-5 py-5 text-xs font-medium uppercase tracking-[0.1em] text-stone sm:flex-row sm:justify-between sm:px-8 lg:px-14">
           <p>
             © {year} {studio.name}
           </p>

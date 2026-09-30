@@ -8,7 +8,13 @@ export function Philosophy() {
     <>
       <Seo
         title="Design Philosophy — Hombali Vasisht"
-        description="How the practice thinks about form, function, light, space, materials, context, sustainability, and human experience."
+        description="How Hombali Vasisht, Bengaluru, thinks about form, function, light, space, materials, context, sustainability, and human experience."
+        path="/philosophy"
+        image={pageHeroes.philosophy}
+        crumbs={[
+          { name: "Home", path: "/" },
+          { name: "Philosophy", path: "/philosophy" },
+        ]}
       />
       <PageIntro
         index="04"
@@ -39,14 +45,14 @@ export function Philosophy() {
             ) : null}
             <Container className="relative grid items-center gap-12 py-20 md:py-28 lg:grid-cols-12">
               <div className={`${index % 2 === 0 ? "lg:col-span-6" : "lg:col-span-6 lg:col-start-7"}`}>
-                <p className={`text-[0.68rem] uppercase tracking-[0.24em] ${dark ? "text-paper/70" : "text-bronze"}`}>
+                <p className={`text-xs font-medium uppercase tracking-[0.12em] ${dark ? "text-paper/70" : "text-bronze"}`}>
                   {String(index + 1).padStart(2, "0")} / {principle.title}
                 </p>
-                <h2 className="mt-4 text-[clamp(3rem,5vw,5rem)]">{principle.title}</h2>
-                <p className={`mt-6 font-light leading-relaxed ${dark ? "text-paper/80" : "text-stone"}`}>
+                <h2 className="mt-4">{principle.title}</h2>
+                <p className={`mt-6 leading-relaxed ${dark ? "text-paper/80" : "text-stone"}`}>
                   {principle.text}
                 </p>
-                <p className="mt-8 text-2xl italic md:text-3xl">{principle.note}</p>
+                <p className="mt-8 text-lg leading-relaxed">{principle.note}</p>
               </div>
               <div
                 className={`${dark ? "text-paper/85" : "text-ink/80"} ${

@@ -58,8 +58,8 @@ export function EnquiryForm() {
   if (sentName) {
     return (
       <div className="border-t border-ink pt-8">
-        <h2 className="text-4xl">Thank you, {sentName}.</h2>
-        <p className="mt-5 font-light leading-relaxed text-stone">
+        <h2>Thank you, {sentName}.</h2>
+        <p className="mt-5 leading-relaxed text-stone">
           Your mail application should open with this enquiry addressed to the studio. If it does not, write
           directly to{" "}
           <a className="text-ink underline decoration-line underline-offset-4" href={`mailto:${studio.email}`}>
@@ -81,7 +81,7 @@ export function EnquiryForm() {
       <Field id="email" label="Email" type="email" error={errors.email} autoComplete="email" />
       <Field id="phone" label="Phone" type="tel" autoComplete="tel" optional />
       <div className="mt-8">
-        <label htmlFor="projectType" className="text-[0.68rem] uppercase tracking-[0.22em] text-stone">
+        <label htmlFor="projectType" className="text-xs font-medium uppercase tracking-[0.12em] text-stone">
           Project type
         </label>
         <select
@@ -109,7 +109,7 @@ export function EnquiryForm() {
       </div>
       <Field id="site" label="Site or location" error={errors.site} autoComplete="off" />
       <div className="mt-8">
-        <label htmlFor="message" className="text-[0.68rem] uppercase tracking-[0.22em] text-stone">
+        <label htmlFor="message" className="text-xs font-medium uppercase tracking-[0.12em] text-stone">
           Message
         </label>
         <textarea
@@ -128,7 +128,7 @@ export function EnquiryForm() {
       </div>
       <button
         type="submit"
-        className="mt-10 inline-flex border border-sun bg-sun px-8 py-4 text-[0.72rem] uppercase tracking-[0.24em] text-ink transition-colors duration-500 hover:border-bronze hover:bg-bronze hover:text-paper"
+        className="mt-10 inline-flex border border-sun bg-sun px-8 py-4 text-xs font-medium uppercase tracking-[0.12em] text-ink transition-colors duration-500 hover:border-bronze hover:bg-bronze hover:text-paper"
       >
         Send enquiry
       </button>
@@ -153,7 +153,7 @@ function Field({
 }) {
   return (
     <div className="mt-8">
-      <label htmlFor={id} className="text-[0.68rem] uppercase tracking-[0.22em] text-stone">
+      <label htmlFor={id} className="text-xs font-medium uppercase tracking-[0.12em] text-stone">
         {label}
         {optional ? <span className="ml-2 tracking-normal normal-case">optional</span> : null}
       </label>

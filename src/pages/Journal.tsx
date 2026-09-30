@@ -9,7 +9,13 @@ export function Journal() {
     <>
       <Seo
         title="Journal — Hombali Vasisht"
-        description="Essays, project stories, and notes on drawing, materials, courtyards, and the practice of architecture in Bengaluru."
+        description="Essays and notes from Hombali Vasisht on drawing, materials, courtyards, and the practice of architecture in Bengaluru."
+        path="/journal"
+        image={pageHeroes.journal}
+        crumbs={[
+          { name: "Home", path: "/" },
+          { name: "Journal", path: "/journal" },
+        ]}
       />
       <PageIntro
         index="06"
@@ -27,14 +33,14 @@ export function Journal() {
               <article key={article.slug} className="border-b border-line">
                 <Link to={`/journal/${article.slug}`} className="group grid gap-6 py-10 md:grid-cols-12 md:items-start">
                   <div className="md:col-span-3">
-                    <p className="text-[0.68rem] uppercase tracking-[0.22em] text-stone">{article.date}</p>
-                    <p className="mt-2 text-[0.68rem] uppercase tracking-[0.22em] text-bronze">{article.category}</p>
+                    <p className="text-xs font-medium uppercase tracking-[0.12em] text-stone">{article.date}</p>
+                    <p className="mt-2 text-xs font-medium uppercase tracking-[0.12em] text-bronze">{article.category}</p>
                   </div>
                   <div className="md:col-span-6">
-                    <h2 className="text-4xl transition-colors duration-500 group-hover:text-bronze md:text-5xl">
+                    <h2 className="transition-colors duration-500 group-hover:text-bronze">
                       {article.title}
                     </h2>
-                    <p className="mt-4 font-light leading-relaxed text-stone">{article.excerpt}</p>
+                    <p className="mt-4 leading-relaxed text-stone">{article.excerpt}</p>
                   </div>
                   <div className="overflow-hidden md:col-span-3">
                     <img
