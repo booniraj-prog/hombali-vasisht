@@ -1,4 +1,5 @@
-import { useMemo, useState } from "react"
+import { useMemo } from "react"
+import { useSearchParams } from "react-router-dom"
 import { AnimatePresence, motion } from "framer-motion"
 import { categories, type Category } from "../data/types.ts"
 import { pageHeroes } from "../data/site.ts"
@@ -9,12 +10,23 @@ import { Container, PageIntro } from "../components/Section.tsx"
 
 type Filter = "All" | Category
 
+function isCategory(value: string | null): value is Category {
+  return categories.includes(value as Category)
+}
+
 export function Projects() {
-  const [filter, setFilter] = useState<Filter>("All")
+  const [params, setParams] = useSearchParams()
+  const requested = params.get("category")
+  const filter: Filter = isCategory(requested) ? requested : "All"
   const visible = useMemo(
     () => (filter === "All" ? projects : projects.filter((project) => project.category === filter)),
     [filter],
   )
+
+  function choose(next: Filter) {
+    if (next === "All") setParams({}, { replace: true })
+    else setParams({ category: next }, { replace: true })
+  }
 
   return (
     <>
@@ -32,7 +44,7 @@ export function Projects() {
         lede="A portion of the practice, across houses, institutions, hotels, interiors, and a few public edges. Each project opens onto its own sheet."
       />
 
-      <section className="py-14 md:py-20">
+      <section className="py-20 md:py-28">
         <Container>
           <div className="flex gap-x-6 gap-y-3 overflow-x-auto pb-4" role="group" aria-label="Filter projects by category">
             {(["All", ...categories] as Filter[]).map((category) => {
@@ -42,7 +54,7 @@ export function Projects() {
                   key={category}
                   type="button"
                   aria-pressed={active}
-                  onClick={() => setFilter(category)}
+                  onClick={() => choose(category)}
                   className={`shrink-0 border-b pb-1 text-[0.72rem] uppercase tracking-[0.2em] transition-colors ${
                     active ? "border-ink text-ink" : "border-transparent text-stone hover:text-ink"
                   }`}

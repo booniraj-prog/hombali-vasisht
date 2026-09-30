@@ -20,7 +20,7 @@ export function Journal() {
         image={pageHeroes.journal}
         lede="Short writings on courtyards, materials, schools, and the habit of drawing. A record of how the practice thinks between projects."
       />
-      <section className="py-8 md:py-12">
+      <section className="py-16 md:py-20">
         <Container>
           <div className="border-t border-line">
             {articles.map((article) => (

@@ -3,7 +3,7 @@ import { Container, SectionLabel } from "./Section.tsx"
 
 export function Clients({ index = "08", tone = "white" }: { index?: string; tone?: "white" | "ivory" }) {
   return (
-    <section id="clients" className={tone === "white" ? "bg-white py-24 md:py-32" : "py-24 md:py-32"}>
+    <section id="clients" className={tone === "white" ? "bg-white py-20 md:py-28" : "py-20 md:py-28"}>
       <Container>
         <div className="grid gap-10 lg:grid-cols-12 lg:items-end">
           <div className="lg:col-span-5">

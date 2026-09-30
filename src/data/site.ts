@@ -1,4 +1,4 @@
-import type { DrawingKind } from "./types.ts"
+import { categories, type DrawingKind } from "./types.ts"
 import { photo } from "../lib/media.ts"
 
 /**
@@ -48,29 +48,92 @@ export const pageHeroes = {
   services: photo("photo-1667099639128-4b10f464f4a2", 2400),
   journal: photo("photo-1682414181779-591e1c620b4e", 2400),
   contact: photo("photo-1744448365250-9b6aa1a7e4a3", 2400),
+  build: photo("photo-1713026511073-853c2c3d2f7e", 2400),
+  leadership: photo("photo-1582510003544-4d00b7f74220", 2400),
   missing: photo("photo-1662264200468-450825d2372c", 2400),
 }
 
-export const navigation = [
-  { label: "Projects", to: "/projects" },
-  { label: "About", to: "/about" },
-  { label: "Philosophy", to: "/philosophy" },
-  { label: "Services", to: "/services" },
-  { label: "Journal", to: "/journal" },
-  { label: "Contact", to: "/contact" },
+export const navigation: {
+  label: string
+  to: string
+  end?: boolean
+  children?: { label: string; to: string }[]
+}[] = [
+  { label: "Home", to: "/", end: true },
+  {
+    label: "About Us",
+    to: "/about",
+    children: [
+      { label: "The practice", to: "/about" },
+      { label: "Leadership", to: "/leadership" },
+    ],
+  },
+  {
+    label: "Projects",
+    to: "/projects",
+    children: [
+      { label: "All projects", to: "/projects" },
+      ...categories.map((category) => ({
+        label: category,
+        to: `/projects?category=${encodeURIComponent(category)}`,
+      })),
+    ],
+  },
+  { label: "Build it yourself", to: "/build" },
+  { label: "Connect with us", to: "/contact" },
 ]
 
 export const social = [
-  { label: "Instagram", href: "https://instagram.com/" },
-  { label: "LinkedIn", href: "https://www.linkedin.com/" },
-  { label: "ArchDaily", href: "https://www.archdaily.com/" },
-]
+  { id: "facebook", label: "Facebook", href: "https://facebook.com/" },
+  { id: "instagram", label: "Instagram", href: "https://instagram.com/" },
+  { id: "linkedin", label: "LinkedIn", href: "https://www.linkedin.com/" },
+  { id: "archdaily", label: "ArchDaily", href: "https://www.archdaily.com/" },
+] as const
 
 export const stats = [
   { value: "38", label: "Years of practice" },
   { value: "120", label: "Works completed" },
   { value: "18", label: "Towns and cities" },
   { value: "11", label: "Recognitions" },
+]
+
+export const leadershipIntro =
+  "Three partners lead Hombali Vasisht from the Malleswaram studio. A commission stays with the person you call, from the first drawing through the visits on site."
+
+export const leaders = [
+  {
+    name: "Arunachal Hombali",
+    role: "Partner",
+    phone: "+91 91086 37443",
+    phoneHref: "tel:+919108637443",
+    socials: [
+      { id: "facebook" as const, label: "Facebook", href: "https://facebook.com/" },
+      { id: "instagram" as const, label: "Instagram", href: "https://instagram.com/" },
+      { id: "linkedin" as const, label: "LinkedIn", href: "https://www.linkedin.com/" },
+    ],
+  },
+  {
+    name: "Sarojini Hombali",
+    role: "Partner",
+    phone: "+91 97424 23507",
+    phoneHref: "tel:+919742423507",
+    socials: [
+      { id: "facebook" as const, label: "Facebook", href: "https://facebook.com/" },
+      { id: "instagram" as const, label: "Instagram", href: "https://instagram.com/" },
+      { id: "linkedin" as const, label: "LinkedIn", href: "https://www.linkedin.com/" },
+    ],
+  },
+  {
+    name: "Shravanth Vasisth",
+    role: "Partner",
+    phone: "+91 97394 70014",
+    phoneHref: "tel:+919739470014",
+    socials: [
+      { id: "facebook" as const, label: "Facebook", href: "https://facebook.com/" },
+      { id: "instagram" as const, label: "Instagram", href: "https://instagram.com/" },
+      { id: "linkedin" as const, label: "LinkedIn", href: "https://www.linkedin.com/" },
+    ],
+  },
 ]
 
 export const education = [

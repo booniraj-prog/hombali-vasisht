@@ -21,7 +21,7 @@ export function ProjectDetail() {
       />
       <header className="relative flex min-h-[78svh] flex-col justify-end overflow-hidden bg-deep text-paper">
         <HeroField kind={project.drawing} image={project.hero.src} />
-        <Container className="relative pt-32 pb-16">
+        <Container className="relative pt-40 pb-16 md:pt-44 md:pb-20">
           <p className="text-[0.68rem] uppercase tracking-[0.24em] text-paper/75">
             <Link to="/projects" className="transition-colors hover:text-sun">
               Projects
@@ -53,7 +53,7 @@ export function ProjectDetail() {
         </Container>
       </div>
 
-      <section className="py-16 md:py-24">
+      <section className="py-20 md:py-28">
         <Container className="grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-7">
             <p className="text-[0.68rem] uppercase tracking-[0.24em] text-stone">Overview</p>
@@ -71,7 +71,7 @@ export function ProjectDetail() {
         </Container>
       </section>
 
-      <section className="border-t border-line bg-white py-16 md:py-24">
+      <section className="border-t border-line bg-white py-20 md:py-28">
         <Container className="grid items-center gap-12 lg:grid-cols-12">
           <div className="lg:col-span-5">
             <p className="text-[0.68rem] uppercase tracking-[0.24em] text-stone">Design concept</p>
@@ -107,7 +107,7 @@ export function ProjectDetail() {
         </Container>
       </section>
 
-      <section className="bg-white py-16 md:py-24">
+      <section className="bg-white py-20 md:py-28">
         <Container className="grid gap-16 lg:grid-cols-12">
           <div className="lg:col-span-4">
             <p className="text-[0.68rem] uppercase tracking-[0.24em] text-stone">Materials</p>

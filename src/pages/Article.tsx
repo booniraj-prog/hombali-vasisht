@@ -18,7 +18,7 @@ export function Article() {
       <article>
         <header className="relative flex min-h-[72svh] flex-col justify-end overflow-hidden bg-deep text-paper">
           <HeroField kind="section" image={article.image.src} />
-          <Container className="relative max-w-3xl pt-36 pb-16">
+          <Container className="relative pt-40 pb-16 md:pt-44 md:pb-20">
             <p className="text-[0.68rem] uppercase tracking-[0.24em] text-paper/75">
               <Link to="/journal" className="hover:text-sun">
                 Journal
@@ -30,17 +30,19 @@ export function Article() {
             <p className="mt-6 text-sm uppercase tracking-[0.2em] text-paper/70">{article.date}</p>
           </Container>
         </header>
-        <Container className="mt-10 max-w-5xl">
+        <Container className="mt-10">
           <ImageFrame src={article.image.src} alt={article.image.alt} aspect="aspect-[16/9]" priority hover={false} />
         </Container>
-        <Container className="max-w-3xl py-12 md:py-16">
-          <blockquote className="border-t border-ink pt-6 text-3xl leading-snug italic md:text-4xl">
-            {article.pull}
-          </blockquote>
-          <div className="mt-10 space-y-6 font-light leading-relaxed text-ink/85">
-            {article.paragraphs.map((paragraph) => (
-              <p key={paragraph.slice(0, 24)}>{paragraph}</p>
-            ))}
+        <Container className="py-12 md:py-16">
+          <div className="max-w-3xl">
+            <blockquote className="border-t border-ink pt-6 text-3xl leading-snug italic md:text-4xl">
+              {article.pull}
+            </blockquote>
+            <div className="mt-10 space-y-6 font-light leading-relaxed text-ink/85">
+              {article.paragraphs.map((paragraph) => (
+                <p key={paragraph.slice(0, 24)}>{paragraph}</p>
+              ))}
+            </div>
           </div>
         </Container>
       </article>

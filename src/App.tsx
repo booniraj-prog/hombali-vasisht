@@ -5,10 +5,12 @@ import { Footer } from "./components/Footer.tsx"
 import { Header } from "./components/Header.tsx"
 import { studio } from "./data/site.ts"
 import { About } from "./pages/About.tsx"
+import { Build } from "./pages/Build.tsx"
 import { Article } from "./pages/Article.tsx"
 import { Contact } from "./pages/Contact.tsx"
 import { Home } from "./pages/Home.tsx"
 import { Journal } from "./pages/Journal.tsx"
+import { Leadership } from "./pages/Leadership.tsx"
 import { NotFound } from "./pages/NotFound.tsx"
 import { Philosophy } from "./pages/Philosophy.tsx"
 import { ProjectDetail } from "./pages/ProjectDetail.tsx"
@@ -48,10 +50,12 @@ function RouteTransition() {
         <Routes location={location}>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/leadership" element={<Leadership />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/projects/:slug" element={<ProjectDetail />} />
           <Route path="/philosophy" element={<Philosophy />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/build" element={<Build />} />
           <Route path="/journal" element={<Journal />} />
           <Route path="/journal/:slug" element={<Article />} />
           <Route path="/contact" element={<Contact />} />

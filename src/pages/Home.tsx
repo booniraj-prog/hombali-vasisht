@@ -69,7 +69,7 @@ function Hero() {
         <LineArt kind="courtyard" mode="static" />
       </div>
 
-      <Container className="relative flex min-h-[100svh] flex-col justify-end pt-32 pb-12 md:pb-16">
+      <Container className="relative flex min-h-[100svh] flex-col justify-end pt-40 pb-16 md:pt-44 md:pb-20">
         <p className="text-[0.68rem] uppercase tracking-[0.28em] text-sun">
           {studio.city} · Practice since {studio.established}
         </p>
@@ -89,9 +89,6 @@ function Hero() {
             About the Architect
           </TextLink>
         </div>
-        <p className="mt-14 text-[0.62rem] uppercase tracking-[0.26em] text-paper/55">
-          {studio.map.lat.toFixed(2)}° N · {studio.map.lng.toFixed(2)}° E · Sheet 01 · Home
-        </p>
       </Container>
     </section>
   )
@@ -99,7 +96,7 @@ function Hero() {
 
 function Introduction() {
   return (
-    <section id="introduction" className="border-b border-line bg-white py-24 md:py-32">
+    <section id="introduction" className="border-b border-line bg-white py-20 md:py-28">
       <Container className="grid items-start gap-14 lg:grid-cols-12">
         <div className="lg:col-span-3">
           <SectionLabel index="01">Introduction</SectionLabel>
@@ -141,7 +138,7 @@ function SelectedWork() {
   const [lead, ...rest] = selected
   if (!lead) return null
   return (
-    <section id="work" className="py-24 md:py-32">
+    <section id="work" className="py-20 md:py-28">
       <Container>
         <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <div>
@@ -198,7 +195,7 @@ function SelectedWork() {
 
 function Disciplines() {
   return (
-    <section id="disciplines" className="border-y border-line bg-white py-24 md:py-32">
+    <section id="disciplines" className="border-y border-line bg-white py-20 md:py-28">
       <Container className="grid gap-12 lg:grid-cols-12">
         <div className="lg:col-span-4">
           <SectionLabel index="03">Disciplines</SectionLabel>
@@ -231,7 +228,7 @@ function Disciplines() {
 
 function Experience() {
   return (
-    <section id="practice" className="py-24 md:py-32">
+    <section id="practice" className="py-20 md:py-28">
       <Container>
         <SectionLabel index="04">Experience</SectionLabel>
         <h2 className="mt-5 max-w-3xl text-[clamp(2.6rem,4.5vw,4.4rem)] text-balance">
@@ -272,7 +269,7 @@ function Featured() {
         style={reduce ? undefined : { y }}
       />
       <div className="absolute inset-0 bg-gradient-to-t from-deep via-deep/30 to-deep/25" />
-      <Container className="relative flex min-h-[88svh] flex-col justify-end py-14 md:py-20">
+      <Container className="relative flex min-h-[88svh] flex-col justify-end py-20 md:py-28">
         <SectionLabel index="05" tone="light">
           Featured project
         </SectionLabel>
@@ -293,7 +290,7 @@ function Featured() {
 
 function Philosophy() {
   return (
-    <section id="philosophy" className="bg-white py-24 md:py-32">
+    <section id="philosophy" className="bg-white py-20 md:py-28">
       <Container>
         <div className="grid gap-10 lg:grid-cols-12 lg:items-end">
           <div className="lg:col-span-7">
@@ -321,7 +318,7 @@ function Philosophy() {
 
 function Recognition() {
   return (
-    <section id="recognition" className="border-t border-line py-24 md:py-32">
+    <section id="recognition" className="border-t border-line py-20 md:py-28">
       <Container className="grid gap-16 lg:grid-cols-12">
         <div className="lg:col-span-4">
           <SectionLabel index="07">Recognition</SectionLabel>
@@ -346,7 +343,7 @@ function Recognition() {
 function ContactBand() {
   return (
     <section className="bg-deep text-paper">
-      <Container className="grid gap-10 py-24 md:py-36 lg:grid-cols-12 lg:items-end">
+      <Container className="grid gap-10 py-20 md:py-28 lg:grid-cols-12 lg:items-end">
         <div className="lg:col-span-8">
           <SectionLabel index="09" tone="light">
             Contact

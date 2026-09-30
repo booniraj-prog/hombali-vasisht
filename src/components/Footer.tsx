@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import { BrandIcon } from "./BrandIcon.tsx"
 import { navigation, social, studio } from "../data/site.ts"
 
 const year = new Date().getFullYear()
@@ -24,6 +25,17 @@ export function Footer() {
                 <Link to={item.to} className="text-sm transition-colors hover:text-bronze">
                   {item.label}
                 </Link>
+                {item.children && item.children.length <= 3 ? (
+                  <ul className="mt-2 space-y-2 border-l border-line pl-4">
+                    {item.children.map((child) => (
+                      <li key={child.to}>
+                        <Link to={child.to} className="text-sm text-stone transition-colors hover:text-bronze">
+                          {child.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                ) : null}
               </li>
             ))}
           </ul>
@@ -48,16 +60,18 @@ export function Footer() {
 
         <div className="lg:col-span-2">
           <p className="text-[0.68rem] uppercase tracking-[0.24em] text-stone">Follow</p>
-          <ul className="mt-4 space-y-2">
+          <ul className="-ml-2 mt-4 flex items-center">
             {social.map((item) => (
-              <li key={item.label}>
+              <li key={item.id}>
                 <a
                   href={item.href}
-                  className="text-sm hover:text-bronze"
+                  aria-label={item.label}
+                  title={item.label}
+                  className="flex h-9 w-9 items-center justify-center text-ink transition-colors hover:text-bronze focus-visible:text-bronze focus-visible:outline focus-visible:outline-1 focus-visible:outline-offset-2 focus-visible:outline-bronze"
                   rel="noreferrer"
                   target="_blank"
                 >
-                  {item.label}
+                  <BrandIcon id={item.id} />
                 </a>
               </li>
             ))}

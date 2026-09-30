@@ -21,7 +21,7 @@ export function Services() {
         lede="Eight services, one practice. Most commissions begin as a conversation and stay with the principal from the first drawing to the last site visit."
       />
 
-      <section className="py-16 md:py-24">
+      <section className="py-20 md:py-28">
         <Container className="grid gap-16 lg:grid-cols-12">
           <div className="lg:col-span-4">
             <p className="text-[0.68rem] uppercase tracking-[0.24em] text-stone">Scope</p>
@@ -44,7 +44,7 @@ export function Services() {
         </Container>
       </section>
 
-      <section className="border-t border-line bg-white py-16 md:py-24">
+      <section className="border-t border-line bg-white py-20 md:py-28">
         <Container>
           <p className="text-[0.68rem] uppercase tracking-[0.24em] text-stone">Method</p>
           <h2 className="mt-4 text-5xl">A project, in four movements</h2>

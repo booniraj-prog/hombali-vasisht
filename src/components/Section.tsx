@@ -73,7 +73,7 @@ export function PageIntro({
   return (
     <header className="relative flex min-h-[88svh] flex-col justify-end overflow-hidden bg-deep text-paper">
       <HeroField kind={drawing} image={image} />
-      <Container className="relative grid gap-10 pt-36 pb-14 lg:grid-cols-12 lg:items-end md:pb-20">
+      <Container className="relative grid gap-10 pt-40 pb-14 lg:grid-cols-12 lg:items-end md:pt-44 md:pb-20">
         <p className="text-[0.68rem] font-medium uppercase tracking-[0.28em] text-paper/75 lg:col-span-3">
           <span className="text-sun">{index}</span>
           <span className="mx-3 opacity-50">/</span>

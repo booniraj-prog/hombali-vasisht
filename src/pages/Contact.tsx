@@ -13,7 +13,7 @@ export function Contact() {
         title="Contact — Hombali Vasisht"
         description="Write to the Bengaluru studio of Hombali Vasisht. Malleswaram office, email, phone, a project enquiry form, and a map."
       />
-      <section className="relative min-h-[88svh] overflow-hidden bg-deep pt-28 pb-16 text-paper md:pt-36 md:pb-24">
+      <section className="relative min-h-[88svh] overflow-hidden bg-deep pt-40 pb-16 text-paper md:pt-44 md:pb-24">
         <HeroField kind="plan" image={pageHeroes.contact} />
         <Container className="relative grid gap-16 lg:grid-cols-12">
           <div className="lg:col-span-5">
